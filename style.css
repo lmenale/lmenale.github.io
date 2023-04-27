@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;400;700&display=swap');
 * {
-    margin: 50;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -12,6 +12,7 @@
 }
 section {
     height: 100vh;
+    margin: 150;
     display: grid;
     justify-content: center;
     align-items: center;
