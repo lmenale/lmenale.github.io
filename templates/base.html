@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LuMe&#x27;s Portfolio</title>
-<link rel="stylesheet" href="https://menale.it/style.css?h=952372007fe5dc30ecb7" />
-<link rel="shortcut icon" type="image/png" href="https://menale.it/favicon.png"/>
+<title>{{ config.title }}</title>
+<link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}" />
+<link rel="shortcut icon" type="image/png" href="{{ get_url(path="favicon.png") }}"/>
 <script
   src="https://kit.fontawesome.com/93866eaaa9.js"
   crossorigin="anonymous">
@@ -19,9 +19,9 @@
     <ul>
       <li>
         <a href="/"
-          ><img class="logo" src="https://menale.it/favicon.png" alt="" /><span
+          ><img class="logo" src="{{ get_url(path="favicon.png") }}" alt="" /><span
             class="sitename"
-            >lume&#x27;s portfolio</span
+            >{{ config.title | lower }}</span
           ></a
         >
       </li>
@@ -62,14 +62,7 @@
 <body>
   <section class="section">
     <div class="container">
-      
-<h1 class="title">
-  My second post
-</h1>
-<p class="subtitle"><strong>2024-07-02</strong></p>
-<p>This is my second blog post.</p>
-
-
+      {% block content %} {% endblock %}
     </div>
   </section>
 
@@ -93,8 +86,8 @@
       </p>
     </div>
   </footer>
-  <script src="https://menale.it/darktheme.js?h=1f98ef1c31a9b802fd27" crossorigin="anonymous"></script>
-  <script src="https://menale.it/nav-toggle.js?h=12d73114aa5698a9b889" crossorigin="anonymous"></script>
+  <script src="{{ get_url(path="darktheme.js", cachebust=true) }}" crossorigin="anonymous"></script>
+  <script src="{{ get_url(path="nav-toggle.js", cachebust=true) }}" crossorigin="anonymous"></script>
 </body>
 
 </html>

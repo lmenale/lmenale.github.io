@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="title">{{ section.title }}</h2>
+
+{{ section.content | safe }}
+<br>
+
+<div class="columns">
+    <div class="column is-centered has-text-centered">
+        <h3 class="subtitle is-size-3">Soft skills</h3>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <!-- First column -->
+        <td valign="top" style="padding-right: 40px;">
+            {% for index in section.extra.professional %}
+                {% if loop.index <= 6 %}
+                <div>
+                    <strong>{{ index.soft }}</strong>
+                </div>
+								<div class="column">
+									<progress class="progress is-link" value="{{ index.expr }}" max="5"></progress>
+								</div>
+                <br>
+                {% endif %}
+            {% endfor %}
+        </td>
+
+        <!-- Second column -->
+        <td valign="top">
+            {% for index in section.extra.professional %}
+                {% if loop.index > 6 %}
+                <div>
+									<strong>{{ index.soft }}</strong>
+								</div>
+								<div class="column">
+									<progress class="progress is-link" value="{{ index.expr }}" max="5"></progress>
+								</div>
+								<br>
+								{% endif %}
+            {% endfor %}
+        </td>
+    </tr>
+</table>
+
+<div class="columns">
+    <div class="column is-centered has-text-centered">
+        <h3 class="subtitle is-size-3">Hard skills</h3>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <!-- First column -->
+        <td valign="top" style="padding-right: 40px;">
+            {% for index in section.extra.hard %}
+                {% if loop.index <= 2 %}
+                <div>
+                    <strong>{{ index.lang }}</strong>
+                </div>
+								<div class="column">
+									<progress class="progress is-link" value="{{ index.expr }}" max="5"></progress>
+								</div>
+                <br>
+                {% endif %}
+            {% endfor %}
+        </td>
+
+        <!-- Second column -->
+        <td valign="top">
+            {% for index in section.extra.hard %}
+                {% if loop.index > 2 %}
+                <div>
+									<strong>{{ index.lang }}</strong>
+								</div>
+								<div class="column">
+									<progress class="progress is-link" value="{{ index.expr }}" max="5"></progress>
+								</div>
+								<br>
+								{% endif %}
+            {% endfor %}
+        </td>
+    </tr>
+</table>
+
+{% endblock content %}
