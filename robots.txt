@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://menale.it/sitemap.xml
+Sitemap: https://www.menale.it/sitemap.xml
